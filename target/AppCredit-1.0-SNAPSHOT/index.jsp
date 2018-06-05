@@ -29,7 +29,7 @@
               action="${pageContext.servletContext.contextPath}/IngresoServlet"
               method="post">
             <!--img class="mb-4" src="http://www.construccionenacero.com/sites/construccionenacero.com/files/noticia/bc_07-16_n_5_copia.png" alt="" width="72" height="72"-->
-            <h1 class="h3 mb-3 font-weight-normal">CREDITO</h1>   
+            <h1 class="h4 mb-2 font-weight-normal">CREDITO</h1>   
             <div class="container">
                 <div class="form-row">
                     <div class="col">
