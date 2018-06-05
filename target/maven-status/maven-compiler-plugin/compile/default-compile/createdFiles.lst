@@ -1,0 +1,9 @@
+co\com\poli\appcredit\controller\RegistrarServlet.class
+co\com\poli\appcredit\util\JPAFactory.class
+co\com\poli\appcredit\jpacontroller\exceptions\IllegalOrphanException.class
+co\com\poli\appcredit\jpacontroller\exceptions\PreexistingEntityException.class
+co\com\poli\appcredit\model\Tblusuarios_.class
+co\com\poli\appcredit\controller\IngresoServlet.class
+co\com\poli\appcredit\jpacontroller\TblusuariosJpaController.class
+co\com\poli\appcredit\model\Tblusuarios.class
+co\com\poli\appcredit\jpacontroller\exceptions\NonexistentEntityException.class
