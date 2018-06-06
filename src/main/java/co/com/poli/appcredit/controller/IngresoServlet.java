@@ -88,12 +88,10 @@ public class IngresoServlet extends HttpServlet {
                     session.setAttribute("p", p);
                     System.out.println(p);
                     break;
-                /*case "LISTAR":
+                case "LISTAR":
 
-                    List<Tblusuarios> usuarios = jpaController.findTblusuariosEntities();
-                    session.setAttribute("LISTADO", usuarios);
-                    rd = request.getRequestDispatcher("/view/Listar.jsp");                    
-                    break;*/
+                    rd = request.getRequestDispatcher("/view/Listar.jsp");
+                    break;
             }
 
             rd.forward(request, response);
