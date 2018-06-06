@@ -20,20 +20,23 @@
         <br>
         <br>            
         <div class="text-center">
-            <label for="exampleFormControlInput1">Listar Creditos ---> </label>
-            <button type="button" class="btn btn-primary">Listar</button>
-            <br>
-            <br>
-            <label for="exampleFormControlInput1">Credito mas utilizado ---> </label>
-            <button type="button" class="btn btn-primary">Aqui</button>
-            <br>
-            <br>
-            <label for="exampleFormControlInput1">Credito mas acumulado y su valor ---> </label>
-            <button type="button" class="btn btn-primary">Acumulado</button>
-            <br>
-            <br>
-            <label for="exampleFormControlInput1">Quienes prestan mas ---> </label>
-            <button type="button" class="btn btn-primary">Quien presta</button>
+            <form action="${pageContext.servletContext.contextPath}/IngresoServlet"
+              method="post">
+                <label for="exampleFormControlInput1">Listar Creditos ---> </label>
+                <button type="submit" class="btn btn-primary" value="Listar" name="accion">Listar</button>
+                <br>
+                <br>
+                <label for="exampleFormControlInput1">Credito mas utilizado ---> </label>
+                <button type="button" class="btn btn-primary">Aqui</button>
+                <br>
+                <br>
+                <label for="exampleFormControlInput1">Credito mas acumulado y su valor ---> </label>
+                <button type="button" class="btn btn-primary">Acumulado</button>
+                <br>
+                <br>
+                <label for="exampleFormControlInput1">Quienes prestan mas ---> </label>
+                <button type="button" class="btn btn-primary">Quien presta</button>
+            </form>
         </div>
     </body>
 </html>

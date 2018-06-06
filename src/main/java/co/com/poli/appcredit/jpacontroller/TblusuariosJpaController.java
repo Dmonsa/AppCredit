@@ -35,6 +35,7 @@ public class TblusuariosJpaController implements Serializable {
     public void create(Tblusuarios tblusuarios) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
+
             em = getEntityManager();
             em.getTransaction().begin();
             em.persist(tblusuarios);
@@ -140,5 +141,16 @@ public class TblusuariosJpaController implements Serializable {
             em.close();
         }
     }
-    
+
+    public Tblusuarios findTblUsuarioMaxValue() {
+        EntityManager em = getEntityManager();
+        Query q = em.createQuery("Select max(monto) from tblusarios");
+
+        Tblusuarios usuarios = new Tblusuarios();
+
+        usuarios.setMonto(q.getSingleResult().toString());
+
+        return usuarios;
+    }
+
 }

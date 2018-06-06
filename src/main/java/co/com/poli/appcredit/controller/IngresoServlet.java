@@ -10,6 +10,7 @@ import co.com.poli.appcredit.util.JPAFactory;
 import co.com.poli.appcredit.model.Tblusuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -36,6 +37,7 @@ public class IngresoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         try {
             HttpSession session = request.getSession(true);
             RequestDispatcher rd = null;
@@ -66,7 +68,34 @@ public class IngresoServlet extends HttpServlet {
                     tblusuarios.setTipocomp(tcompania);
                     jpaController.create(tblusuarios);
                     break;
+
+                case "Listar":
+
+                    List<Tblusuarios> usuarios = jpaController.findTblusuariosEntities();
+                    String p = "";
+                    rd = request.getRequestDispatcher("/view/Listar.jsp");
+                    for (Tblusuarios usuario : usuarios) {
+                        p += "<tr><td>" + usuario.getCredito() + "</td>"
+                                + "<td>" + usuario.getDocumento() + "</td>"
+                                + "<td>" + usuario.getNombres() + "</td>"
+                                + "<td>" + usuario.getApellidos() + "</td>"
+                                + "<td>" + usuario.getMonto() + "</td>"
+                                + "<td>" + usuario.getTipocredito() + "</td>"
+                                + "<td>" + usuario.getTipotrabajador() + "</td>"
+                                + "<td>" + usuario.getTipocomp() + "</td></tr>";
+
+                    }
+                    session.setAttribute("p", p);
+                    System.out.println(p);
+                    break;
+                /*case "LISTAR":
+
+                    List<Tblusuarios> usuarios = jpaController.findTblusuariosEntities();
+                    session.setAttribute("LISTADO", usuarios);
+                    rd = request.getRequestDispatcher("/view/Listar.jsp");                    
+                    break;*/
             }
+
             rd.forward(request, response);
 
         } catch (Exception ex) {
