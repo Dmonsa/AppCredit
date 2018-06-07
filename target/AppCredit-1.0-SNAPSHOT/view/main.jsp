@@ -27,15 +27,15 @@
                 <br>
                 <br>
                 <label for="exampleFormControlInput1">Credito mas utilizado ---> </label>
-                <button type="button" class="btn btn-primary">Aqui</button>
+                <button type="submit" class="btn btn-primary">Aqui</button>
                 <br>
                 <br>
                 <label for="exampleFormControlInput1">Credito mas acumulado y su valor ---> </label>
-                <button type="button" class="btn btn-primary">Acumulado</button>
+                <button type="submit" class="btn btn-primary" value="MaxMonto" name="accion">Acumulado</button>
                 <br>
                 <br>
                 <label for="exampleFormControlInput1">Quienes prestan mas ---> </label>
-                <button type="button" class="btn btn-primary">Quien presta</button>
+                <button type="submit" class="btn btn-primary">Quien presta</button>
             </form>
         </div>
     </body>

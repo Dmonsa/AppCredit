@@ -88,9 +88,11 @@ public class IngresoServlet extends HttpServlet {
                     session.setAttribute("p", p);
                     System.out.println(p);
                     break;
-                case "LISTAR":
-
-                    rd = request.getRequestDispatcher("/view/Listar.jsp");
+                    
+                case "MaxMonto":
+                   usuarios = (List<Tblusuarios>) jpaController.findTblUsuarioMaxValue();
+                    session.setAttribute("MAX", usuarios);
+                    rd = request.getRequestDispatcher("/view/max.jsp");
                     break;
             }
 
